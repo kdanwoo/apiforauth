@@ -1,0 +1,32 @@
+# springboot
+server:
+  port: 8080
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:file:~/data/h2/api_db;AUTO_SERVER=TRUE
+    username: test  # 사용자 이름 (로그인 시 사용)
+    password: 1234  # 사용자 암호 (로그인 시 사용)
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties.hibernate.hbm2ddl.auto: update # 해당의미?
+    showSql: true
+
+security:
+  oauth2:
+    client:
+      client-id: testClientId
+      client-secret: testSecret
+    resource:
+      token-info-uri: http://localhost:8082/oauth/check_token
+
+logging:
+  level:
+    org:
+      springframework: DEBUG
