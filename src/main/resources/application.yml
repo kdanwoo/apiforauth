@@ -26,6 +26,11 @@ security:
     resource:
       token-info-uri: http://localhost:8082/oauth/check_token
 
+# 리소스 관련 커스텀 설정
+common:
+  client-url: http://localhost:8081/client/authorization
+
+
 logging:
   level:
     org:
